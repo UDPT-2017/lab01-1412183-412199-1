@@ -1,0 +1,56 @@
+doctype html
+html(lang='en')
+  head
+    block head
+        title #{title}
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        link(rel='stylesheet', href='css/_layout.css')
+  body
+    nav.navbar.navbar-inverse
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+
+          a.navbar-brand(href='/')
+            img(src="/image/image-team/symbol.png", style="margin-bottom:3px;")
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.active
+              a(href='/') Home
+            li
+              a(href='/album') Album
+            li
+              a(href='/blog') Blog
+            li
+              a(href='/about') About
+    .container-fluid
+        block leftsidebar
+        .col-sm-2.sidenav
+          ul(class="nav nav-list")
+            li(class="icon-home")
+              a(href="/") Dashboard
+            li(class="icon-envelope")
+              a(href="#") Messages
+                span(class="badge badge-info" style="margin-left:5px") 16
+            li(class="icon-comment")
+              a(href="#") Comments
+                span(class="badge badge-info" style="margin-left:5px") 10
+            li(class="icon-user")
+              a(href="#") Menber
+            li(class="icon-comment")
+              a(href="#") Settings
+            li(class="icon-share")
+              a(href="#") Logout
+        block content
+        block rightsidebar
+        .col-sm-2.sidenav
+        block footer
+    footer.container-fluid.text-center
+      p Footer Text

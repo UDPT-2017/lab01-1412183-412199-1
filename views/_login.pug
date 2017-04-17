@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title
+    title Login Form
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  body
+    form.form-horizontal
+      .form-group
+        label.control-label.col-sm-2(for='email') Email:
+        .col-sm-10
+          input#email.form-control(type='email', placeholder='Enter email')
+      .form-group
+        label.control-label.col-sm-2(for='pwd') Password:
+        .col-sm-10
+          input#pwd.form-control(type='password', placeholder='Enter password')
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          .checkbox
+            label
+              input(type='checkbox')
+              |  Remember me
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          button.btn.btn-default(type='submit') Submit

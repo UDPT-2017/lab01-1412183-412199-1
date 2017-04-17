@@ -1,0 +1,37 @@
+extends _layout.pug
+block content
+  div(class="content" style="margin-left:180px; margin-top:60px")
+    div(style="margin-top:20px; background:#F4F4F4")
+      div(class="post" style="background:#FFFFFF; margin-top:10px" )
+        div(class="avatar col-lg-1 col-md-1 col-sm-1 col-xs-1")
+          a(href="#")
+              img(src= "../" + po.avatar)
+        div(class="name" style="margin-left:70px")
+          strong(type="strong")
+            a(href="#") #{po.yname}
+          if(po.fell)
+            d đang cảm thấy #{po.fell}
+          cite
+            p= po.views + " lượt xem"
+        div(class="bontent-post" style="margin-top:15px")
+          div(style="text-align:justify")
+            p= po.content
+        div(class="image-post")
+          if(po.image_path)
+            div(class="thumbnail" id="myBtn")
+              img(src = "../" + po.image_path)
+
+        div(class="input-cmt")
+          div(class="col-lg-12 col-md-12 col-sm-12 col-xs-12")
+            center
+              input(type="text" class="form-control" placeholder="Viết bình luận..." style="height:40px")
+        if bl.idcm
+          div(class="comments-cmt")
+            div(class="avatar-cmt col-lg-1 col-md-1 col-sm-1 col-xs-1")
+              a(href="#")
+                img(src= "../" + bl.avatar)
+            div(class="name-cmt" style="margin-left:70px")
+              a(href="#") #{bl.yname}
+              if(bl.comment)
+                d #{bl.comment}
+              p= bl.time_cmt.getDay() + " tháng " + bl.time_cmt.getMonth() + " lúc " + bl.time_cmt.getHours() + ":" + bl.time_cmt.getMinutes()

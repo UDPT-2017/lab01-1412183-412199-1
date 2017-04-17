@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title 404 error
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet' href="css/404.css")
+    style(type='text/css')
+      .error-template {padding: 40px 15px;text-align: center;background-color:green;}
+      .error-actions {margin-top:15px;margin-bottom:15px;}
+      .error-actions .btn { margin-right:10px; }
+  body
+    div(class="container")
+      div(class="row")
+        div(class="col-md-12")
+          div(class="error-template")
+            h1  Oops!
+            h2  404 Not Found
+            div(class="error-details") Your requested page not found!
+            div(class="error-actions")
+              a(class="btn btn-success btn-lg" href="../")
+                span(class="glyphicon glyphicon-home")
+                |  Back to Home

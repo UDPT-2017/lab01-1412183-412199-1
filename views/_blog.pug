@@ -1,0 +1,46 @@
+extends _layout.pug
+block content
+  div(class="content col-lg-8 col-md-8 col-sm-8 col-xs-8 " )
+    div(class="con" style="margin-top:20px; background:#F4F4F4")
+      each bd in baidang.rows
+        div(class="post" style="background:#FFFFFF; margin-top:15px" )
+          div(class="avatar col-lg-1 col-md-1 col-sm-1 col-xs-1")
+            a(href="#")
+              img(src= bd.avatar)
+
+          div(class="name" style="margin-left:40px")
+            strong(type="strong")
+              a(href="#") #{bd.yname}
+            if(bd.fell)
+              d đang cảm thấy #{bd.fell}
+            p= bd.time.getDate() + " tháng " + bd.time.getMonth(+1) + " lúc " + bd.time.getHours() + ":" + bd.time.getMinutes()
+
+          div(class="content-post" style="margin-top:15px")
+            div(style="text-align:justify")
+              p= bd.content.substr(0,100) + '...'
+                a(href="/blog/postId"+bd.idp) Chi tiết
+
+          div(class="image-post")
+            if(bd.image_path)
+              div(class="thumbnail")
+                img(src = bd.image_path)
+
+          cite(class="views")
+            p= bd.views + " lượt xem"
+
+          div(class="input-cmt")
+            div(class="sasasa col-lg-12 col-md-12 col-sm-12 col-xs-12")
+              center
+                input(type="text" class="form-control" placeholder="Viết bình luận..." style="height:40px")
+
+          each bl in binhluan.rows
+            if bl.post_id == bd.idp
+            div(class="comments-cmt")
+              div(class="avatar-cmt col-lg-1 col-md-1 col-sm-1 col-xs-1")
+                a(href="#")
+                  img(src= bl.avatar)
+              div(class="name-cmt" style="margin-left:40px")
+                a(href="#") #{bl.yname}
+                if(bl.comment)
+                  d #{bl.comment}
+                p= bl.time_cmt.getDate() + " tháng " + bl.time_cmt.getMonth() + " lúc " + bl.time_cmt.getHours() + ":" + bl.time_cmt.getMinutes()

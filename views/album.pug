@@ -1,0 +1,17 @@
+extends layout.pug
+block content
+  body
+    div.container
+      h2 Image Gallery
+      p The .thumbnail class can be used to display an image gallery.
+      p The .caption class adds proper padding and a dark grey color to text inside thumbnails. 
+      p Click on the images to enlarge them.
+      div.row
+        each val in list_Album.rows
+          div.col-md-4
+            div.thumbnail(style='width:180px; height:200px')
+                a(href="/album/"+val.id)
+                  img(src=val.path)
+                  div.caption
+                      p #{val.creator}
+                      p #{val.view_all_image}

@@ -1,0 +1,55 @@
+//- html
+//- head
+//-   title= "HHBlog"
+//-   meta(charset="utf-8")
+//-   meta(name="viewport" content="width=device-width, initial-scale=1")
+//-   link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+//-   script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js")
+//-   script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+//-   link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css")
+//-   link(rel="stylesheet" href="css/style.css")
+//- body
+//-  div(class="container")
+//-     div(class="row")
+//-       div(class="col-sm-3 col-xs-6 col-lg-8")
+//-         a(hef="#")
+//-           img(src="/image/image-album/bgirl_6.jpg")
+html
+head
+  title= "HHBlog"
+  meta(charset="utf-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+  link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css")
+  link(rel="stylesheet" href="css/style.css")
+
+body
+  nav(class="nav navbar-default")
+    div
+      ul(class ="nav navbar-nav")
+        li(class-"active")
+          a(href="#") Home
+        li
+          a(href="#") Albums
+        li
+          a(href="#") Blog
+        li
+          a(href="#") About
+
+  div(class="container" style="margin-left:250px")  
+    div(class="row")
+      form
+        |Them trang thai
+        input(type='text')
+
+      each bd in baidang.rows
+        div(class="col-md-10")
+          a(hef="#")
+            img(src="image/image-post/buon.jpg")
+          a(href="#") #{bd.poster}
+          da dang bai viet.
+
+          #{bd.views} view
+

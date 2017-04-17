@@ -1,0 +1,88 @@
+html
+head
+  title= title
+  meta(charset="utf-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+  link(rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css")
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+  link(rel="stulesheet" href="compoments/boottraps/dist/css/bootstrap.css")
+  link(rel="stylesheet" href="css/style.css")
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+
+body(style="background:#F4F4F4")
+nav(class="navbar navbar-inverse navbar-fixed-top")
+  div(class="container-fluid")
+    div(class="navbar-header")
+      button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar")
+      a(class="navbar-brand" href="#") Hplus
+    div(class="collapse navbar-collapse" id="myNavbar")
+      ul(class="nav navbar-nav navbar-right")
+        li
+          a(href="../") HOME
+        li
+          a(href="#") ALBUMS
+        li(class ="active")
+          a(href="#") BLOG
+        li
+          a(href="#") ABOUT
+
+left(class="slidebar inverse navbar-fixed-top" style="width:180px; height:700px;margin-top:51px")
+  button(type="button" style="margin-top:15px" class="left-toggle" data-toggle="collapse" data-target="#myLeft")
+  div(class="collapse navbar-collapse" id="myLeft")
+    ul(class="nav nav-list")
+      li(class="icon-home")
+        a(href="index") Dashboard
+      li(class="icon-envelope")
+        a(href="#") Messages
+          span(class="badge badge-info" style="margin-left:5px") 16
+      li(class="icon-comment")
+        a(href="#") Comments
+          span(class="badge badge-info" style="margin-left:5px") 10
+      li(class="icon-user")
+        a(href="#") Menber
+      li(class="icon-comment")
+        a(href="#") Settings
+      li(class="icon-share")
+        a(href="#") Logout
+
+
+div(class="content" style="margin-left:180; margin-top:60px")
+  div(class="col-lg-7 col-md-7 col-sm-9 col-xs-12" style="margin-top:20px; background:#F4F4F4")
+    div(class="post" style="background:#FFFFFF; margin-top:10px" )
+      div(class="avatar col-lg-1 col-md-1 col-sm-1 col-xs-1")
+        a(href="#")
+            img(src= "../" + po.avatar)
+      div(class="name" style="margin-left:70px")
+        strong(type="strong")
+          a(href="#") #{po.yname}
+        if(po.fell)
+          d đang cảm thấy #{po.fell}
+        cite
+          p= po.views + " lượt xem"
+      div(class="bontent-post" style="margin-top:15px")
+        div(style="text-align:justify")
+          p= po.content
+      div(class="image-post")
+        if(po.image_path)
+          div(class="thumbnail" id="myBtn")
+            img(src = "../" + po.image_path)
+
+      div(class="input-cmt")
+        div(class="sasasa col-lg-12 col-md-12 col-sm-12 col-xs-12")
+          center
+            input(type="text" class="form-control" placeholder="Viết bình luận..." style="height:40px")
+      if bl.idcm
+        div(class="comments-cmt")
+          div(class="avatar-cmt col-lg-1 col-md-1 col-sm-1 col-xs-1")
+            a(href="#")
+              img(src= "../" + bl.avatar)
+          div(class="name-cmt" style="margin-left:70px")
+            a(href="#") #{bl.yname}
+            if(bl.comment)
+              d #{bl.comment}
+            p= bl.time_cmt.getDay() + " tháng " + bl.time_cmt.getMonth() + " lúc " + bl.time_cmt.getHours() + ":" + bl.time_cmt.getMinutes()

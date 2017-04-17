@@ -1,0 +1,18 @@
+body {
+    background-color: lightblue;
+}
+
+.error-template {
+    padding: 40px 15px;
+    text-align: center;
+    /*background-color: green;*/
+}
+
+.error-actions {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.error-actions .btn {
+    margin-right: 10px;
+}

@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head
+    title Bootstrap Example
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    style(type="text/css" href="css/listIn.css") 
+  body
+    div
+      p #{list_Album.rows.length}
+    .container
+      br
+      #myCarousel.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+            li.active(data-target='#myCarousel' data-slide-to='0')
+            -for(int i=1;i<list_Album.rows.length;i++){
+              li(data-target='#myCarousel', data-slide-to='#{i}')
+            -}
+        .carousel-inner(role='listbox')
+            .item.active
+              img(src=list_Album.rows[0].patch alt='' style="width:460;height:345")
+              .carousel-caption
+                 h3 #{list_Album.rows[0].creator}
+                 p #{list_Album.rows[0].view}
+            -for(int i=1;i<list_Album.rows.length;i++){
+              .item
+                 img(src=list_Album.rows[i].patch alt='' style="width:460;height:345")
+                 .carousel-caption
+                   h3 #{list_Album.rows[i].creator}
+                   p  #{list_Album.rows[i].view}
+              -}
+        a.left.carousel-control(href='#myCarousel' role='button' data-slide='prev')
+          span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+          span.sr-only Previous
+        a.right.carousel-control(href='#myCarousel' role='button' data-slide='next')
+          span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+          span.sr-only Next

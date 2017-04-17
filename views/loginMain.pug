@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    link(href='style.css' type='text/css' rel='stylesheet')
+    link(href='css/font-awesome.css'  type='text/css' rel='stylesheet')
+  body
+    .container
+      img(src='imgForcss\login.png')
+      form
+        .form-input
+          input(type='text', name='username', placeholder='enter username')
+        .form-input
+          input(type='password', name='password', placeholder='enter password')
+        |
+        input.btn-Login(type='submit', name='submit', value='Login')
+        br
+        |
+        a(href='#') Forget Password?
+    body

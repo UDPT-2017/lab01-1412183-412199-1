@@ -1,0 +1,13 @@
+extends _layout.pug
+block append head
+    link(href='css/thumbnail-gallery.css', rel='stylesheet')
+block content
+    div(class="container" style="margin-top:20px; margin-left:200px")
+        .col-lg-12
+          h1.page-header Thumbnail Gallery
+        each val in list_Album.rows
+         .col-lg-3.col-md-4.col-xs-6.thumb
+            span #{val.view}
+            span #{val.patch}
+             a.thumbnail(href='#')
+              img.img-responsive(src='../'+ val.patch, alt='' style='width:100%px; height:100%px')
